@@ -1,0 +1,32 @@
+----------------------------------------------------------------
+1 How To Open Mysql Workbench In CMD
+----------------------------------------------------------------
+
+> mysql -u root -p 
+
+----------------------------------------------------------------
+2 Enable Local/Global Data Varibable
+----------------------------------------------------------------
+
+show global variables like 'local_infile';
+set global local_infile=true;
+
+----------------------------------------------------------------
+3 How To Import .CSV File
+----------------------------------------------------------------
+
+C:\Windows\system32>mysql --local-infile=1 -u root -p
+
+mysql> SHOW DATABASES;
+
+mysql> USE your_database_name;
+
+mysql> SHOW TABLES;
+
+mysql> LOAD DATA LOCAL INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/your_file_name.csv'
+    -> INTO TABLE your_table_name
+    -> FIELDS TERMINATED BY ','
+    -> ENCLOSED BY '"'
+    -> LINES TERMINATED BY '\n'
+    -> IGNORE 1 ROWS;
+
